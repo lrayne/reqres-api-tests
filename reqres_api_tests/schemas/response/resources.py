@@ -1,4 +1,4 @@
-resources_list = {
+resources_list_retrieved = {
     "type": "object",
     'additionalProperties': False,
     "properties": {
@@ -32,7 +32,7 @@ resources_list = {
     "required": ["page", "per_page", "total", "total_pages", "data", "support"],
 }
 
-single_resource = {
+single_resource_info_retrieved = {
     "type": "object",
     'additionalProperties': False,
     "properties": {

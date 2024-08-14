@@ -1,4 +1,4 @@
-users_list = {
+users_list_retrieved = {
     "type": "object",
     'additionalProperties': False,
     "properties": {
@@ -29,7 +29,7 @@ users_list = {
     "required": ["page", "per_page", "total", "total_pages", "data", "support"],
 }
 
-single_user = {
+single_user_info_retrieved = {
     "type": "object",
     'additionalProperties': False,
     "properties": {
@@ -53,7 +53,7 @@ single_user = {
     "required": ["data", "support"],
 }
 
-create_user = {
+user_created = {
     "type": "object",
     "properties": {
         "name": {"type": "string"},
@@ -65,7 +65,7 @@ create_user = {
 }
 
 
-update_user = {
+user_updated = {
     "type": "object",
     'additionalProperties': False,
     "properties": {

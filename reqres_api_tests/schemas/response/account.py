@@ -1,11 +1,11 @@
-register_successfully = {
+registerged_successfully = {
     "type": "object",
     'additionalProperties': False,
     "properties": {"id": {"type": "integer"}, "token": {"type": "string"}},
     "required": ["id", "token"],
 }
 
-register_unsuccessfully = {
+failed_to_register = {
     "type": "object",
     'additionalProperties': False,
     "properties": {"error": {"type": "string"}},
@@ -13,7 +13,7 @@ register_unsuccessfully = {
 }
 
 
-login_successfully = {
+logged_in_successfully = {
     "type": "object",
     'additionalProperties': False,
     "properties": {"token": {"type": "string"}},
@@ -21,7 +21,7 @@ login_successfully = {
 }
 
 
-login_unsuccessfully = {
+failed_to_log_in = {
     "type": "object",
     'additionalProperties': False,
     "properties": {"error": {"type": "string"}},
