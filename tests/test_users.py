@@ -12,7 +12,7 @@ from reqres_api_tests.schemas.request.users import user_info
 
 @allure.severity(Severity.NORMAL)
 @allure.suite('Пользователи')
-@allure.step('Получение пользователей с уникальными id')
+@allure.title('Получение пользователей с уникальными id')
 def test_all_the_users_should_have_unique_id(api_client):
 
     response = api_client.request(method='GET', endpoint='/api/users')
@@ -27,7 +27,7 @@ def test_all_the_users_should_have_unique_id(api_client):
 
 @allure.severity(Severity.MINOR)
 @allure.suite('Пользователи')
-@allure.step('Получение пользователей с delay')
+@allure.title('Получение пользователей с delay')
 def test_get_all_the_users_with_delay(api_client):
 
     response = api_client.request(
@@ -42,7 +42,7 @@ def test_get_all_the_users_with_delay(api_client):
 
 @allure.severity(Severity.NORMAL)
 @allure.suite('Пользователи')
-@allure.step('Получение cуществующего пользователя по id')
+@allure.title('Получение cуществующего пользователя по id')
 def test_get_existing_user_by_id(api_client):
 
     id = '2'
@@ -56,7 +56,7 @@ def test_get_existing_user_by_id(api_client):
 
 @allure.severity(Severity.MINOR)
 @allure.suite('Пользователи')
-@allure.step('Получение не существуюшего пользователя по id')
+@allure.title('Получение не существуюшего пользователя по id')
 def test_get_non_existent_user_by_id(api_client):
 
     id = '23'
@@ -70,7 +70,7 @@ def test_get_non_existent_user_by_id(api_client):
 
 @allure.severity(Severity.CRITICAL)
 @allure.suite('Пользователи')
-@allure.step('Успешное создание пользователя')
+@allure.title('Создание пользователя')
 def test_create_user_successfully(api_client):
 
     name = 'morpheus'
@@ -91,7 +91,7 @@ def test_create_user_successfully(api_client):
 
 @allure.severity(Severity.MINOR)
 @allure.suite('Пользователи')
-@allure.step('Успешное создание пользователя без указания места работы')
+@allure.title('Создание пользователя без указания места работы')
 def test_create_user_without_job_successfully(api_client):
 
     name = 'morpheus'
@@ -110,7 +110,7 @@ def test_create_user_without_job_successfully(api_client):
 
 @allure.severity(Severity.MINOR)
 @allure.suite('Пользователи')
-@allure.step('Успешное создание пользователя без имени')
+@allure.title('Создание пользователя без имени')
 def test_create_user_without_name_successfully(api_client):
 
     job = 'leader'
@@ -129,7 +129,7 @@ def test_create_user_without_name_successfully(api_client):
 
 @allure.severity(Severity.MINOR)
 @allure.suite('Пользователи')
-@allure.step('Успешное создание пользователя без переданных атрибутов')
+@allure.title('Создание пользователя без переданных атрибутов')
 def test_create_user_without_provided_attributes_successfully(api_client):
 
     response = api_client.request(method='POST', endpoint='/api/users', json_data={})
@@ -141,7 +141,7 @@ def test_create_user_without_provided_attributes_successfully(api_client):
 
 @allure.severity(Severity.MINOR)
 @allure.suite('Пользователи')
-@allure.step('Успешное создание пользователя с custom атрибутом')
+@allure.title('Создание пользователя с custom атрибутом')
 def test_create_user_with_custom_provided_attribute_successfully(api_client):
 
     value_of_custom_attribute = 'value'
@@ -159,7 +159,7 @@ def test_create_user_with_custom_provided_attribute_successfully(api_client):
 
 @allure.severity(Severity.NORMAL)
 @allure.suite('Пользователи')
-@allure.step('Обновление информации о пользователе')
+@allure.title('Обновление информации о пользователе')
 def test_update_user_info(api_client):
 
     name = 'john'
@@ -180,7 +180,7 @@ def test_update_user_info(api_client):
 
 @allure.severity(Severity.NORMAL)
 @allure.suite('Пользователи')
-@allure.step('Частичное обновление информации о пользователе')
+@allure.title('Частичное обновление информации о пользователе')
 def test_partial_update_user_info(api_client):
 
     job = 'co-leader'
@@ -199,7 +199,7 @@ def test_partial_update_user_info(api_client):
 
 @allure.severity(Severity.NORMAL)
 @allure.suite('Пользователи')
-@allure.step('Удаление пользователя')
+@allure.title('Удаление пользователя')
 def test_delete_user(api_client):
 
     id = '2'

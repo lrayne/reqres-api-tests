@@ -11,7 +11,7 @@ from reqres_api_tests.schemas.request.account import credentials
 
 @allure.severity(Severity.CRITICAL)
 @allure.suite('Аккаунт')
-@allure.step('Успешная регистрация')
+@allure.title('Регистрация')
 def test_register_successfully(api_client):
 
     payload = {
@@ -31,7 +31,7 @@ def test_register_successfully(api_client):
 
 @allure.severity(Severity.MINOR)
 @allure.suite('Аккаунт')
-@allure.step('Авторизация без указания пароля')
+@allure.title('Авторизация без указания пароля')
 def test_register_unsuccessfully(api_client):
 
     payload = {"email": os.getenv('EMAIL')}

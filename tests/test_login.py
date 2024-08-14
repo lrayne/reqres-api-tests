@@ -11,7 +11,7 @@ import allure
 
 @allure.severity(Severity.CRITICAL)
 @allure.suite('Аккаунт')
-@allure.step('Успешная авторизация')
+@allure.title('Авторизация')
 def test_login_successfully(api_client):
 
     payload = {"email": os.getenv('EMAIL'), "password": os.getenv('LOGIN_PASSWORD')}
@@ -28,7 +28,7 @@ def test_login_successfully(api_client):
 
 @allure.severity(Severity.MINOR)
 @allure.suite('Аккаунт')
-@allure.step('Авторизация без указания пароля')
+@allure.title('Авторизация без указания пароля')
 def test_login_unsuccessfully(api_client):
 
     payload = {"email": os.getenv('EMAIL')}
