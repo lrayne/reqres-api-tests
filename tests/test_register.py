@@ -31,7 +31,7 @@ def test_register_successfully(api_client):
 
 @allure.severity(Severity.MINOR)
 @allure.suite('Аккаунт')
-@allure.title('Авторизация без указания пароля')
+@allure.title('Регистрация без указания пароля')
 def test_register_unsuccessfully(api_client):
 
     payload = {"email": os.getenv('EMAIL')}
