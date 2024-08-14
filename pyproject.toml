@@ -10,8 +10,21 @@ python = "^3.12"
 requests = "^2.32.3"
 pytest = "^8.3.2"
 jsonschema = "^4.23.0"
+allure-pytest = "^2.13.5"
+python-dotenv = "^1.0.1"
+
+[tool.pytest.ini_options]
+log_date_format = "%Y-%m-%d %H:%M:%S"
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_cli_level = "INFO"
+log_cli = true
+addopts = [
+    '--clean-alluredir',
+    '--alluredir=allure-results'
+]
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
