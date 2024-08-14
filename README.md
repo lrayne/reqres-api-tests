@@ -30,7 +30,7 @@
 1. Склонировать репозиторий:
 
 ```
-git clone git@github.com:lrayne/reqres-api-tests.git
+git clone https://github.com/lrayne/reqres-api-tests.git
 ```
 
 2. Установить зависимости:
