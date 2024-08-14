@@ -1,7 +1,15 @@
+import allure
+from allure_commons.types import Severity
 from jsonschema import validate
-from reqres_api_tests.schemas.resources import resources_list, single_resource
+from reqres_api_tests.schemas.response.resources import (
+    resources_list_retrieved,
+    single_resource_info_retrieved,
+)
 
 
+@allure.severity(Severity.NORMAL)
+@allure.suite('Ресурсы')
+@allure.step('Получение ресурсов с уникальными id')
 def test_all_the_resources_should_have_unique_id(api_client):
 
     response = api_client.request(method='GET', endpoint='/api/unknown')
@@ -11,9 +19,12 @@ def test_all_the_resources_should_have_unique_id(api_client):
     assert response.status_code == 200
     assert body['total'] == 12
     assert list(set(ids)) == ids
-    validate(body, schema=resources_list)
+    validate(body, schema=resources_list_retrieved)
 
 
+@allure.severity(Severity.NORMAL)
+@allure.suite('Ресурсы')
+@allure.step('Получение ресурса по id')
 def test_get_existing_resource_by_id(api_client):
 
     id = '2'
@@ -22,9 +33,12 @@ def test_get_existing_resource_by_id(api_client):
     body = response.json()
 
     assert response.status_code == 200
-    validate(body, schema=single_resource)
+    validate(body, schema=single_resource_info_retrieved)
 
 
+@allure.severity(Severity.MINOR)
+@allure.suite('Ресурсы')
+@allure.step('Получение не существующего ресурса по id')
 def test_get_non_existing_resource_by_id(api_client):
 
     id = '23'

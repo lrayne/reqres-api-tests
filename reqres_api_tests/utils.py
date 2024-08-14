@@ -40,7 +40,9 @@ def request_attaching(response: Response):
     if response.request.body:
         allure.attach(
             body=json.dumps(
-                response.request.body.decode('UTF-8'), indent=4, ensure_ascii=True
+                json.loads(response.request.body.decode('UTF-8')),
+                indent=4,
+                ensure_ascii=True,
             ),
             name="Request body",
             attachment_type=AttachmentType.JSON,
